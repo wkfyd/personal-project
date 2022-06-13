@@ -19,6 +19,7 @@ namespace SnakeGame
         int maxHeight;
 
         int score;
+        int HighScore;
 
         Random rand = new Random();
 
