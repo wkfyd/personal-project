@@ -10,12 +10,9 @@ namespace SnakeGame
 {
     class SnakeBody
     {
-        public int X { get; set; }
-        public int Y { get; set; }
         public SnakeBody()
         {
-            X = 0;
-            Y = 0;
+            
         }
     }
 }
