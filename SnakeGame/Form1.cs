@@ -13,7 +13,7 @@ namespace SnakeGame
     public partial class Form1 : Form
     {
         Image snakeBody;
-
+        int x;
 
         public Form1()
         {
