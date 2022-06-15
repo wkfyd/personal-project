@@ -8,3 +8,13 @@ D:\스네이크\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.cache
 D:\스네이크\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
 D:\스네이크\SnakeGame\obj\Debug\SnakeGame.exe
 D:\스네이크\SnakeGame\obj\Debug\SnakeGame.pdb
+D:\스네이크\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe.config
+D:\스네이크\SnakeGame\SnakeGame\bin\Debug\SnakeGame.exe
+D:\스네이크\SnakeGame\SnakeGame\bin\Debug\SnakeGame.pdb
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.AssemblyReference.cache
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Form1.resources
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.Properties.Resources.resources
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.GenerateResource.cache
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.csproj.CoreCompileInputs.cache
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.exe
+D:\스네이크\SnakeGame\SnakeGame\obj\Debug\SnakeGame.pdb
