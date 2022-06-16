@@ -10,13 +10,13 @@ namespace SnakeGame
 {
     public partial class Form1 : Form
     {
-        List<Snake> snakeList = new List<Snake>();
-
+        List<Snake> snakeList;
+        Apple apple;
         public Form1()
         {
             snakeList = new List<Snake>();
-            snakeList.Add(new Snake(250, 200));
-            snakeList.Add(new Snake(230, 200));
+            snakeList.Add(new Snake(240, 200));
+            apple = new Apple(240, 200);
             InitializeComponent();
         }
         
@@ -26,36 +26,24 @@ namespace SnakeGame
             {
                 snakeList[i].Draw(e.Graphics);
             }
+            apple.AppleDraw(e.Graphics);
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            int i;
             switch (e.KeyCode)
             {
                 case Keys.Right:
-                    for (i = 0; i < snakeList.Count; i++)
-                    {
-                        snakeList[i].Dir = SnakeBody.RIGHT;
-                    }
+                    snakeList[0].Dir = Snake.RIGHT;
                     break;
                 case Keys.Left:
-                    for (i = 0; i < snakeList.Count; i++)
-                    {
-                        snakeList[i].Dir = SnakeBody.LEFT;
-                    }
+                    snakeList[0].Dir = Snake.LEFT;
                     break;
                 case Keys.Up:
-                    for (i = 0; i < snakeList.Count; i++)
-                    {
-                        snakeList[i].Dir = SnakeBody.UP;
-                    }
+                    snakeList[0].Dir = Snake.UP;
                     break;
                 case Keys.Down:
-                    for (i = 0; i < snakeList.Count; i++)
-                    {
-                        snakeList[i].Dir = SnakeBody.DOWN;
-                    }
+                    snakeList[0].Dir = Snake.DOWN;
                     break;
             }
         }
@@ -67,11 +55,24 @@ namespace SnakeGame
 
         private void gameTimer_Tick(object sender, System.EventArgs e)
         {
-            for (int i = 0; i < snakeList.Count; i++)
+
+            if (snakeList[0].X == apple.X && snakeList[0].Y == apple.Y)
+                EatApple();
+
+            for (int i = 1; i < snakeList.Count; i++)  // count = 3   
             {
-                snakeList[i].Move();
+                snakeList[i].X = snakeList[i-1].X;  //머리 X 240 Y 200
+                snakeList[i].Y = snakeList[i-1].Y; //
             }
+
+            snakeList[0].Move(); //snakeList[0]{X 260 Y 200}  snakeList[1]{X 240 Y 200}
+
             Invalidate();
+        }
+
+        private void EatApple()
+        {
+            snakeList.Add(new Snake(snakeList[snakeList.Count-1].X, snakeList[snakeList.Count - 1].Y));
         }
 
     }

@@ -20,7 +20,7 @@ namespace SnakeGame
 
         public int Dir { get; set; }
 
-        int speed = 10;
+        int speed = 20;
         public Snake(int x, int y)
         {
             X = x;
@@ -45,7 +45,6 @@ namespace SnakeGame
             else if (Dir == DOWN)
                 Y += speed;
         }
-
 
     }
 }
