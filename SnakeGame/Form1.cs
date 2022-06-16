@@ -12,17 +12,20 @@ namespace SnakeGame
     {
         List<SnakeBody> snakeBodyList = new List<SnakeBody>();
 
-        int speed = 10;
-
         public Form1()
         {
+            snakeBodyList = new List<SnakeBody>();
+            snakeBodyList.Add(new SnakeBody(250, 200));
+            snakeBodyList.Add(new SnakeBody(230, 200));
             InitializeComponent();
         }
         
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            snakeBodyList.Add(new SnakeBody(e));
-            Invalidate();
+            for (int i = 0; i < snakeBodyList.Count; i++)
+            {
+                snakeBodyList[i].Draw(e.Graphics);
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -31,9 +34,9 @@ namespace SnakeGame
             switch (e.KeyCode)
             {
                 case Keys.Right:
-                    for ( i = 0; i < 1; i++ )
+                    for (i = 0; i < snakeBodyList.Count; i++)
                     {
-                         snakeBodyList[i].X += 10;
+                        snakeBodyList[i].Dir = SnakeBody.RIGHT;
                     }
                     break;
             }
@@ -46,7 +49,11 @@ namespace SnakeGame
 
         private void gameTimer_Tick(object sender, System.EventArgs e)
         {
-            
+            for (int i = 0; i < snakeBodyList.Count; i++)
+            {
+                snakeBodyList[i].Move();
+            }
+            Invalidate();
 
         }
 
