@@ -16,7 +16,7 @@ namespace SnakeGame
         {
             snakeList = new List<Snake>();
             snakeList.Add(new Snake(240, 200));
-            apple = new Apple(240, 200);
+            apple = new Apple(300, 400);
             InitializeComponent();
         }
         
@@ -26,6 +26,7 @@ namespace SnakeGame
             {
                 snakeList[i].Draw(e.Graphics);
             }
+
             apple.AppleDraw(e.Graphics);
         }
 
@@ -59,13 +60,13 @@ namespace SnakeGame
             if (snakeList[0].X == apple.X && snakeList[0].Y == apple.Y)
                 EatApple();
 
-            for (int i = 1; i < snakeList.Count; i++)  // count = 3   
+            for (int i = 1; i < snakeList.Count; i++) 
             {
-                snakeList[i].X = snakeList[i-1].X;  //머리 X 240 Y 200
-                snakeList[i].Y = snakeList[i-1].Y; //
+                snakeList[i].X = snakeList[i-1].X;  
+                snakeList[i].Y = snakeList[i-1].Y; 
             }
 
-            snakeList[0].Move(); //snakeList[0]{X 260 Y 200}  snakeList[1]{X 240 Y 200}
+            snakeList[0].Move(); 
 
             Invalidate();
         }
