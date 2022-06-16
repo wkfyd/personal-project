@@ -49,24 +49,21 @@ namespace SnakeGame
             }
         }
 
-        private void Form1_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
         private void gameTimer_Tick(object sender, System.EventArgs e)
         {
 
             if (snakeList[0].X == apple.X && snakeList[0].Y == apple.Y)
-                EatApple();
-
-            for (int i = 1; i < snakeList.Count; i++) 
             {
-                snakeList[i].X = snakeList[i-1].X;  
-                snakeList[i].Y = snakeList[i-1].Y; 
+                EatApple();
             }
 
-            snakeList[0].Move(); 
+            for (int i = snakeList.Count-1; i > 0 ; i--) 
+            {
+                snakeList[i].X = snakeList[i-1].X;
+                snakeList[i].Y = snakeList[i-1].Y;
+            }
+
+            snakeList[0].Move();
 
             Invalidate();
         }
