@@ -73,9 +73,19 @@ namespace SnakeGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap SnakeBody {
+        internal static System.Drawing.Bitmap snakeBody {
             get {
-                object obj = ResourceManager.GetObject("SnakeBody", resourceCulture);
+                object obj = ResourceManager.GetObject("snakeBody", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SnakeHead {
+            get {
+                object obj = ResourceManager.GetObject("SnakeHead", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

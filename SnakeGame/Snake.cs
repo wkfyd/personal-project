@@ -15,23 +15,30 @@ namespace SnakeGame
         public const int DOWN = 4;
 
         Bitmap snakeBody;
+        Bitmap snakeHead;
         public int X { get; set; }
         public int Y { get; set; }
 
         public int Dir { get; set; }
 
-        int speed = 20;
+        int speed = 30;
         public Snake(int x, int y)
         {
             X = x;
             Y = y;
             Dir = RIGHT;
-            snakeBody = new Bitmap(Properties.Resources.SnakeBody);
+            snakeBody = new Bitmap(Properties.Resources.snakeBody);
+            snakeHead = new Bitmap(Properties.Resources.SnakeHead);
         }
 
         public void Draw(Graphics g)
         {
-            g.DrawImage(snakeBody, X, Y, 20, 20);
+            g.DrawImage(snakeBody, X, Y, 30, 30);
+        }
+
+        public void HeadDraw(Graphics g)
+        {
+            g.DrawImage(snakeHead, X, Y, 30, 30);
         }
 
         public void Move()
