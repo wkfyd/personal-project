@@ -106,6 +106,8 @@ namespace SnakeGame
             snakeList.Add(new Snake(240, 210));
 
             score = 0;
+            scoreLabel.Text = "Score: " + score;
+
 
             gameTimer.Start();
         }
