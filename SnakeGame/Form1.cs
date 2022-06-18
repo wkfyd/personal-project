@@ -95,8 +95,18 @@ namespace SnakeGame
 
         private void startButton_Click(object sender, EventArgs e)
         {
+
             startButton.Enabled = false;
             startButton.Visible = false;
+            gameOverLabel.Visible = false;
+
+            snakeList.Clear();
+
+            snakeList = new List<Snake>();
+            snakeList.Add(new Snake(240, 210));
+
+            score = 0;
+
             gameTimer.Start();
         }
 
@@ -112,6 +122,8 @@ namespace SnakeGame
             {
                 gameTimer.Stop();
                 gameOverLabel.Visible = true;
+                startButton.Enabled = true;
+                startButton.Visible = true;
             }
 
             for ( int i = 1; i <= snakeList.Count-1; i++)
@@ -120,6 +132,8 @@ namespace SnakeGame
                 {
                     gameTimer.Stop();
                     gameOverLabel.Visible = true;
+                    startButton.Enabled = true;
+                    startButton.Visible = true;
                 }
             }
 
