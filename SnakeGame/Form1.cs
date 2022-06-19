@@ -13,6 +13,7 @@ namespace SnakeGame
         List<Snake> snakeList;
         Map map;
         Apple apple;
+        Snake snake;
 
         int score;
 
@@ -22,6 +23,7 @@ namespace SnakeGame
             snakeList.Add(new Snake(240, 210));
             apple = new Apple(360,450);
             map = new Map(780, 660);
+     //       ImageAnimator.Animate(, new EventHandler(OnFrameChanged));
             InitializeComponent();
         }
         
@@ -35,7 +37,7 @@ namespace SnakeGame
                     snakeList[i].HeadDraw(e.Graphics);
                 else
                 {
-                    snakeList[i].Draw(e.Graphics);
+                    snakeList[i].BodyDraw(e.Graphics);
                 }
             }
 
@@ -140,6 +142,10 @@ namespace SnakeGame
             }
 
         }
+       /* private void OnFrameChanged(object sender, EventArgs e)
+        {
+            this.Invalidate();
+        }*/
 
     }
 }

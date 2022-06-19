@@ -28,10 +28,12 @@ namespace SnakeGame
             Y = y;
             Dir = RIGHT;
             snakeBody = new Bitmap(Properties.Resources.snakeBody);
-            snakeHead = new Bitmap(Properties.Resources.SnakeHead);
+            snakeHead = new Bitmap(Properties.Resources.SnakeGIF);
         }
 
-        public void Draw(Graphics g)
+        
+
+        public void BodyDraw(Graphics g)
         {
             g.DrawImage(snakeBody, X, Y, 30, 30);
         }
